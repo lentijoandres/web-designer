@@ -1,0 +1,8 @@
+/*
+ * Ejemplo: src/styles.css en tu otro proyecto React (Vite + Tailwind 4)
+ * Ajusta @source a la ruta de tus componentes.
+ */
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+@import "@mantiz/ui-theme/foundation.css";

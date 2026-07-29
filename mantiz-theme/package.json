@@ -1,0 +1,26 @@
+{
+  "name": "@mantiz/ui-theme",
+  "version": "1.0.0",
+  "description": "Design system MANTIZ — tokens DSM, utilidades Tailwind y tipografía para apps React",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./foundation.css": "./src/foundation.css",
+    "./tokens": "./src/tokens.ts"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4.0.0"
+  },
+  "keywords": [
+    "mantiz",
+    "design-system",
+    "tailwind",
+    "theme"
+  ],
+  "license": "UNLICENSED",
+  "private": true
+}
