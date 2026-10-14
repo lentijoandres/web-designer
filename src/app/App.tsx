@@ -10,7 +10,7 @@ import StandardsManagerView from './components/StandardsManagerView';
 
 function WebDesignerShell() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-background">
       <Header />
       <Routes>
         <Route path="/" element={<ModulesView />} />
@@ -20,7 +20,7 @@ function WebDesignerShell() {
         <Route path="/task-manager" element={<TaskManagerView />} />
         <Route path="/standards-manager" element={<StandardsManagerView />} />
       </Routes>
-      <footer className="mt-8 pb-4 text-center text-xs text-subtle">
+      <footer className="shrink-0 py-3 text-center text-xs text-subtle">
         Powered by Mantiz
       </footer>
     </div>

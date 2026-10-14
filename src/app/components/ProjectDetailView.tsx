@@ -72,7 +72,7 @@ export default function ProjectDetailView() {
   return (
     <div className="flex flex-col min-h-0 flex-1">
       {/* Breadcrumb + Action bar */}
-      <div className="px-6 pt-3 pb-2 flex items-center justify-between">
+      <div className="px-6 pt-3 pb-2 flex items-center justify-between shrink-0">
         <nav className="flex items-center gap-1 text-xs text-muted-foreground">
           <button onClick={() => navigate('/web-designer')} className="hover:text-primary flex items-center gap-1 transition-colors">
             <Home className="w-3 h-3" /> Home
@@ -128,7 +128,8 @@ export default function ProjectDetailView() {
       <div className="flex flex-1 min-h-0 mx-6 mb-6 gap-4">
 
         {/* Left sidebar */}
-        <div className="w-56 flex-shrink-0 flex flex-col bg-card border border-border rounded-xl overflow-hidden shadow-sm">
+        <div className="w-56 flex-shrink-0 min-h-0 flex flex-col rounded-xl shadow-sm">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
           {/* Sidebar header */}
           <div className="bg-brand text-brand-foreground px-4 py-3 flex items-center justify-between flex-shrink-0">
             <span className="text-sm font-medium">Data Manager</span>
@@ -151,7 +152,7 @@ export default function ProjectDetailView() {
           </div>
 
           {/* Component groups */}
-          <div className="overflow-y-auto flex-1 py-2">
+          <div className="min-h-0 flex-1 overflow-y-auto py-2">
             {filteredGroups.map(group => (
               <div key={group.label} className="mb-3">
                 <p className="px-3 py-1 text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
@@ -198,10 +199,12 @@ export default function ProjectDetailView() {
               </div>
             ))}
           </div>
+          </div>
         </div>
 
         {/* Main content */}
-        <div className="flex-1 flex flex-col bg-card border border-border rounded-xl overflow-hidden shadow-sm">
+        <div className="flex-1 min-h-0 flex flex-col rounded-xl shadow-sm">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
 
           {/* Tabs + search row */}
           <div className="flex items-center border-b border-border/70 px-5 flex-shrink-0">
@@ -239,7 +242,7 @@ export default function ProjectDetailView() {
           </div>
 
           {/* Form content */}
-          <div className="flex-1 overflow-y-auto p-5 flex flex-col gap-4">
+          <div className="min-h-0 flex-1 overflow-y-auto p-5 flex flex-col gap-4">
 
             {/* Section 1: Información de la solicitud — 4 columnas */}
             <FormSection title="Información de la solicitud">
@@ -300,6 +303,7 @@ export default function ProjectDetailView() {
               </div>
             </FormSection>
 
+          </div>
           </div>
         </div>
       </div>

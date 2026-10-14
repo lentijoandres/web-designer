@@ -67,7 +67,8 @@ export default function ProjectsView() {
   });
 
   return (
-    <main className="container mx-auto px-6 py-6">
+    <main className="min-h-0 flex-1 overflow-y-auto">
+    <div className="container mx-auto px-6 py-6">
       <PageHeader
         title="Gestor de Proyectos"
         breadcrumbs={[
@@ -176,6 +177,7 @@ export default function ProjectsView() {
           <p className="text-subtle">No se encontraron proyectos</p>
         </div>
       )}
+    </div>
     </main>
   );
 }

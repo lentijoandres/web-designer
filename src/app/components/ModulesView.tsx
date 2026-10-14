@@ -246,7 +246,8 @@ export default function ModulesView() {
   };
 
   return (
-    <main className="container mx-auto px-6 py-6">
+    <main className="min-h-0 flex-1 overflow-y-auto">
+    <div className="container mx-auto px-6 py-6">
       <PageHeader
         title="Panel de Administración"
         breadcrumbs={[{ label: 'Inicio' }]}
@@ -313,6 +314,7 @@ export default function ModulesView() {
           <p className="text-subtle">No hay módulos en esta categoría</p>
         </div>
       )}
+    </div>
     </main>
   );
 }

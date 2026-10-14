@@ -116,7 +116,7 @@ export default function StandardsManagerView() {
   );
 
   return (
-    <div style={{ height: 'calc(100vh - 60px)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+    <div className="flex min-h-0 flex-1 flex-col">
 
       {/* Breadcrumb + actions */}
       <div className="px-6 pt-3 pb-2 flex items-center justify-between flex-shrink-0">
@@ -141,14 +141,15 @@ export default function StandardsManagerView() {
       </div>
 
       {/* Body */}
-      <div className="flex mx-6 mb-6 gap-4" style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
+      <div className="flex mx-6 mb-6 min-h-0 flex-1 gap-4">
 
         {/* Sidebar */}
         {sidebarOpen ? (
           <div
-            className="flex-shrink-0 flex flex-col bg-card border border-border rounded-xl overflow-hidden shadow-sm"
+            className="flex-shrink-0 flex flex-col rounded-xl shadow-sm min-h-0"
             style={{ width: 220 }}
           >
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
             <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/70 flex-shrink-0">
               <BookOpen className="w-3.5 h-3.5 text-foreground" />
               <span className="text-foreground text-[11px] font-bold uppercase tracking-[0.06em]">Standards</span>
@@ -167,7 +168,7 @@ export default function StandardsManagerView() {
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-1.5 pb-1">
+            <div className="min-h-0 flex-1 overflow-y-auto px-1.5 pb-1">
               {filtered.map((s, i) => {
                 const isSelected = i === selectedIdx;
                 return (
@@ -196,6 +197,7 @@ export default function StandardsManagerView() {
                 <ChevronsLeft className="w-3.5 h-3.5" />
               </button>
             </div>
+            </div>
           </div>
         ) : (
           <div className="flex flex-col items-center py-3 bg-card border border-border rounded-xl shadow-sm flex-shrink-0">
@@ -209,14 +211,15 @@ export default function StandardsManagerView() {
         )}
 
         {/* Main panel */}
-        <div className="flex-1 flex flex-col bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+        <div className="flex-1 min-h-0 flex flex-col rounded-xl shadow-sm">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
 
           {/* Record title */}
           <div className="px-5 py-3 border-b border-border/70 flex-shrink-0">
             <span className="text-foreground font-bold text-[17px]">PRUEBA</span>
           </div>
 
-          <div className="flex-1 overflow-y-auto">
+          <div className="min-h-0 flex-1 overflow-y-auto">
 
             {/* ── Properties ─────────────────────────────────── */}
             <Section title="Properties">
@@ -322,6 +325,7 @@ export default function StandardsManagerView() {
               <p className="text-xs text-subtle">No hay configuración de programación definida.</p>
             </Section>
 
+          </div>
           </div>
         </div>
       </div>

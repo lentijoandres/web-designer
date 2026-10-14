@@ -19,7 +19,7 @@ export default function LoginView() {
   };
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+    <div className="flex h-full min-h-0 flex-col overflow-hidden" style={{ fontFamily: "'Montserrat', sans-serif" }}>
 
       {/* Top nav bar */}
       <div className="flex-shrink-0 h-[60px] flex items-center px-4 gap-3 bg-brand">

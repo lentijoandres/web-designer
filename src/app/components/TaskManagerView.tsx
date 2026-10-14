@@ -84,7 +84,7 @@ export default function TaskManagerView() {
   );
 
   return (
-    <div style={{ height: 'calc(100vh - 64px)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+    <div className="flex min-h-0 flex-1 flex-col">
 
       {/* Breadcrumb + top-right button */}
       <div className="px-6 pt-3 pb-2 flex items-center justify-between flex-shrink-0">
@@ -101,13 +101,14 @@ export default function TaskManagerView() {
       </div>
 
       {/* Main area */}
-      <div className="flex mx-6 mb-6 gap-4" style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
+      <div className="flex mx-6 mb-6 min-h-0 flex-1 gap-4">
 
         {/* Sidebar */}
         <div
-          className="flex-shrink-0 flex flex-col bg-card border border-border rounded-xl overflow-hidden shadow-sm transition-all duration-200"
+          className="flex-shrink-0 flex flex-col rounded-xl shadow-sm transition-all duration-200"
           style={{ width: sidebarOpen ? 220 : 40, minHeight: 0 }}
         >
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
           {sidebarOpen ? (
             <>
               {/* Tabs */}
@@ -150,7 +151,7 @@ export default function TaskManagerView() {
               </div>
 
               {/* Task list */}
-              <div className="flex-1 overflow-y-auto px-1.5 pb-1">
+              <div className="min-h-0 flex-1 overflow-y-auto px-1.5 pb-1">
                 {filtered.map(task => {
                   const { icon: Icon, cssVar } = typeIcon[task.type];
                   const isSelected = selectedTask?.id === task.id;
@@ -184,21 +185,28 @@ export default function TaskManagerView() {
               </div>
             </>
           ) : (
-            /* Collapsed sidebar */
-            <div className="flex flex-col items-center py-3 gap-3 flex-1">
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-subtle hover:text-primary hover:bg-surface transition-colors"
-              >
-                <ChevronsRight className="w-3.5 h-3.5" />
-              </button>
-              <ClipboardCheck className="w-4 h-4 text-placeholder" />
+            /* Collapsed sidebar — icon arriba, mismo pie que al expandir */
+            <div className="flex min-h-0 flex-1 flex-col">
+              <div className="flex flex-1 justify-center pt-3">
+                <ClipboardCheck className="w-4 h-4 text-placeholder" />
+              </div>
+              <div className="shrink-0 border-t border-border/70">
+                <button
+                  onClick={() => setSidebarOpen(true)}
+                  title="Expandir"
+                  className="flex w-full items-center justify-center py-2 text-subtle transition-colors hover:bg-surface hover:text-primary"
+                >
+                  <ChevronsRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           )}
+          </div>
         </div>
 
         {/* Content area */}
-        <div className="flex-1 flex flex-col bg-card border border-border rounded-xl shadow-sm overflow-hidden">
+        <div className="flex-1 min-h-0 flex flex-col rounded-xl shadow-sm">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
           {selectedTask ? (
             <>
               {/* Task detail header */}
@@ -232,6 +240,7 @@ export default function TaskManagerView() {
               </div>
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>
