@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Eye, EyeOff, Monitor } from 'lucide-react';
-import imgReactor from '@/imports/Login/e8e738b188bb40258dbfb8828b7a34491870a438.png';
+import imgReactor from '@/imports/Login/reactor-logo.jpg';
 import imgIconWhite from '@/imports/Login/3e00088b67ed5fd0e942543fec21c60951e960e7.png';
 import imgLogoBlack from '@/imports/Login/7676dce60824acd20714db99fe10413e52335dd3.png';
 
