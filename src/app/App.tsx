@@ -20,7 +20,7 @@ function WebDesignerShell() {
         <Route path="/task-manager" element={<TaskManagerView />} />
         <Route path="/standards-manager" element={<StandardsManagerView />} />
       </Routes>
-      <footer className="py-3 text-center text-xs text-subtle">
+      <footer className="mt-auto py-3 text-center text-xs text-subtle">
         Powered by Mantiz
       </footer>
     </div>
