@@ -84,7 +84,7 @@ export default function TaskManagerView() {
   );
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col">
+    <div className="flex flex-col">
 
       {/* Breadcrumb + top-right button */}
       <div className="px-6 pt-3 pb-2 flex items-center justify-between flex-shrink-0">
@@ -101,14 +101,14 @@ export default function TaskManagerView() {
       </div>
 
       {/* Main area */}
-      <div className="flex mx-6 mb-6 min-h-0 flex-1 gap-4">
+      <div className="mx-6 mb-6 flex items-stretch gap-4">
 
         {/* Sidebar */}
         <div
-          className="flex-shrink-0 flex flex-col rounded-xl shadow-sm transition-all duration-200"
-          style={{ width: sidebarOpen ? 220 : 40, minHeight: 0 }}
+          className="flex shrink-0 flex-col rounded-xl shadow-sm transition-all duration-200"
+          style={{ width: sidebarOpen ? 220 : 40 }}
         >
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
+          <div className="flex flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
           {sidebarOpen ? (
             <>
               {/* Tabs */}
@@ -151,7 +151,7 @@ export default function TaskManagerView() {
               </div>
 
               {/* Task list */}
-              <div className="min-h-0 flex-1 overflow-y-auto px-1.5 pb-1">
+              <div className="px-1.5 pb-1">
                 {filtered.map(task => {
                   const { icon: Icon, cssVar } = typeIcon[task.type];
                   const isSelected = selectedTask?.id === task.id;
@@ -186,7 +186,7 @@ export default function TaskManagerView() {
             </>
           ) : (
             /* Collapsed sidebar — icon arriba, mismo pie que al expandir */
-            <div className="flex min-h-0 flex-1 flex-col">
+            <div className="flex flex-1 flex-col">
               <div className="flex flex-1 justify-center pt-3">
                 <ClipboardCheck className="w-4 h-4 text-placeholder" />
               </div>
@@ -205,8 +205,8 @@ export default function TaskManagerView() {
         </div>
 
         {/* Content area */}
-        <div className="flex-1 min-h-0 flex flex-col rounded-xl shadow-sm">
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
+        <div className="flex min-w-0 flex-1 flex-col rounded-xl shadow-sm">
+          <div className="flex flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
           {selectedTask ? (
             <>
               {/* Task detail header */}

@@ -246,7 +246,7 @@ export default function ModulesView() {
   };
 
   return (
-    <main className="min-h-0 flex-1 overflow-y-auto">
+    <main>
     <div className="container mx-auto px-6 py-6">
       <PageHeader
         title="Panel de Administración"
@@ -301,7 +301,7 @@ export default function ModulesView() {
             </h3>
 
             {/* Description */}
-            <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+            <p className="text-xs text-muted-foreground leading-relaxed">
               {module.description}
             </p>
           </div>

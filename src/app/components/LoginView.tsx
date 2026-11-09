@@ -19,7 +19,7 @@ export default function LoginView() {
   };
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+    <div className="flex min-h-screen flex-col" style={{ fontFamily: "'Montserrat', sans-serif" }}>
 
       {/* Top nav bar */}
       <div className="flex-shrink-0 h-[60px] flex items-center px-4 gap-3 bg-brand">
@@ -31,7 +31,7 @@ export default function LoginView() {
       </div>
 
       {/* Main area — 12-col grid */}
-      <div className="flex-1 min-h-0 grid" style={{ gridTemplateColumns: 'repeat(12, 1fr)' }}>
+      <div className="grid flex-1" style={{ gridTemplateColumns: 'repeat(12, 1fr)' }}>
 
         {/* Col 1: left margin */}
         <div />

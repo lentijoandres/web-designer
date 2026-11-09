@@ -19,7 +19,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex-shrink-0 h-[60px] flex items-center px-4 justify-between bg-brand" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <header className="sticky top-0 z-50 h-[60px] flex items-center px-4 justify-between bg-brand" style={{ fontFamily: "'Inter', sans-serif" }}>
       {/* Brand */}
       <div
         className="flex items-center gap-3 cursor-pointer"

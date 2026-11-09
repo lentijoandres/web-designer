@@ -145,7 +145,7 @@ export default function DataManagerView() {
   };
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col">
+    <div className="flex flex-col">
 
       {/* Top bar: breadcrumb + toolbar */}
       <div className="px-6 pt-3 pb-2 flex items-center justify-between flex-shrink-0">
@@ -210,11 +210,11 @@ export default function DataManagerView() {
       </div>
 
       {/* Main area: sidebar tree + body */}
-      <div className="flex mx-6 mb-6 min-h-0 flex-1 gap-4">
+      <div className="flex mx-6 mb-6 items-stretch gap-4">
 
         {/* Sidebar — search + tree */}
-        <div className="flex-shrink-0 flex flex-col rounded-xl shadow-sm" style={{ width: 220, minHeight: 0 }}>
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
+        <div className="flex w-[220px] shrink-0 flex-col rounded-xl shadow-sm">
+          <div className="flex flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
           <div className="px-4 py-2.5 border-b border-border/70 flex-shrink-0 flex items-center gap-2">
             <span className="text-foreground text-[11px] font-bold uppercase tracking-[0.06em]">Data Manager</span>
           </div>
@@ -231,17 +231,17 @@ export default function DataManagerView() {
               />
             </div>
           </div>
-          <div className="min-h-0 flex-1 overflow-y-auto p-1.5">
+          <div className="p-1.5">
             {tree.map(node => renderNode(node))}
           </div>
           </div>
         </div>
 
         {/* Body / content area */}
-        <div className="flex-1 min-h-0 flex flex-col rounded-xl shadow-sm">
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
+        <div className="flex min-w-0 flex-1 flex-col rounded-xl shadow-sm">
+          <div className="flex flex-1 flex-col overflow-hidden rounded-xl border border-border bg-card">
           {selectedNode ? (
-            <div className="flex flex-col h-full">
+            <div className="flex flex-1 flex-col">
               {/* Content header */}
               <div className="px-6 py-4 border-b border-border/70 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary-muted flex items-center justify-center flex-shrink-0">

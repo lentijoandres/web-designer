@@ -67,7 +67,7 @@ export default function ProjectsView() {
   });
 
   return (
-    <main className="min-h-0 flex-1 overflow-y-auto">
+    <main>
     <div className="container mx-auto px-6 py-6">
       <PageHeader
         title="Gestor de Proyectos"
@@ -164,7 +164,7 @@ export default function ProjectsView() {
             </h3>
 
             {/* Description */}
-            <p className="text-xs text-muted-foreground leading-snug line-clamp-2">
+            <p className="text-xs text-muted-foreground leading-snug">
               {project.description}
             </p>
           </div>
